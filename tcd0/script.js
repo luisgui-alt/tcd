@@ -8,11 +8,11 @@ document.getElementsByTagName("button")[0].addEventListener("click", resetQuiz)
 function showQuestion() { // Função responsável por exibir as questões.
     if (questions[currentQuestion]) { // Verifica se há questões disponíveis.
         let q = questions[currentQuestion]
-        // Busca a atual questão no array, disponível no arquivo "questions.js" e a armazena numa variável.
+        // Busca a atual questão no banco, disponível no arquivo "questions.js" e a armazena numa variável.
 
         let pct = Math.floor((currentQuestion / questions.length) * 100)
         document.querySelector(".progress--bar").style.width = `${pct}%`
-        // Calcula a porcentagem do progresso do quiz, e modifica o CSS da Barra de Progresso dinamicamente.
+        // Calcula a porcentagem do progresso no quiz, e modifica o CSS da Barra de Progresso dinamicamente.
 
         document.querySelector(".scoreArea").style.display = "none"
         document.querySelector(".questionArea").style.display = "block"

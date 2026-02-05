@@ -1,12 +1,18 @@
 /*
-    Array de questões do quiz. Cada índice do array é um objeto e cada objeto possui as propriedades "question",
-    "options" e "answer". Sendo respectivamente a pergunta, as alternativas e a resposta correta de cada questão.
+    Banco de questões do quiz. Consiste em um array em que cada índice é um objeto e cada objeto
+    possui as propriedades "question", "options" e "answer". Sendo respectivamente a pergunta,
+    as alternativas e a resposta correta de cada questão.
 
-    O número de questões pode ser ilimitada, assim como o número de alternativas, mas somente poderá haver uma
-    resposta correta.
+    O número de questões pode ser ilimitada, assim como o número de alternativas,
+    porém, a resposta sempre será apenas uma alternativa.
 
-    O JavaScript fica encarregado de adaptar a página web, por isso a quantidade de questões e alternativas pode
-    ser definida livremente, cabendo apenas ao idealizador respeitar a sintaxe padrão do código.
+    O JavaScript fica encarregado de adaptar a página web, por isso a quantidade de questões
+    e alternativas pode ser definida livremente, cabendo apenas ao idealizador respeitar a
+    sintaxe padrão do código.
+
+    Vale ressaltar que este arquivo pode ser substituído por uma requisição de informações
+    diretamente de um banco de dados com semelhantes características, tornando o sistema ainda
+    mais dinâmico.
 */
 let questions = [
     {
