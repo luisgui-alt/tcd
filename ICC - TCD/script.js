@@ -1,9 +1,17 @@
 let currentQuestion = 0
 let correctAnswers = 0
-showQuestion()
-document.getElementsByTagName("button")[0].addEventListener("click", resetQuiz)
-// EventListener associado ao botão de reiniciar o quiz presente na tela final.
-// Após o clique, executará a função resetQuiz().
+
+document.getElementsByTagName("button")[0].addEventListener("click", startQuiz)
+document.getElementsByTagName("button")[1].addEventListener("click", resetQuiz)
+// EventListener associado aos botões de iniciar e reiniciar o quiz. Após o clique
+// executarão as funções definidas em seus parâmetros, StartQuiz() e resetQuiz() respectivamente.
+
+function startQuiz() { // Função que inicializa o quiz.
+    document.querySelector(".startArea").style.display = "none"
+    document.querySelector(".progress").style.display = `block`
+    showQuestion()
+    // Após esconder a Tela Inicial, exibe a barra de progresso e executa a função showQuestion().
+}
 
 function showQuestion() { // Função responsável por exibir as questões.
     if (questions[currentQuestion]) { // Verifica se há questões disponíveis.
@@ -30,7 +38,7 @@ function showQuestion() { // Função responsável por exibir as questões.
             item.addEventListener("click", optionClickEvent)
         })
         /*
-            Linha 21 à Linha 28:
+            Linha 32 à Linha 39:
 
             Após definir uma variável vazia do tipo string, o algoritmo executa um loop adicionando
             dentro da variavel o código HTML que será exibido no Bloco das Opções na página.
@@ -78,6 +86,7 @@ function finishQuiz() { // Função encarregada de encerrar o quiz.
     document.querySelector(".scorePct").innerHTML = `Acertou ${points}%` // Exibe a porcentagem no Bloco da Porcentagem no HTML
 
     const text1 = document.querySelector(".scoreText1")
+    const image = document.querySelector(".prizeImage")
 
     document.querySelector(".scoreText2").innerHTML = `Você acertou ${correctAnswers} de ${questions.length} questões!`
     // Exibe no Bloco dos Acertos a relação de respostas corretas do usuário.
@@ -85,22 +94,26 @@ function finishQuiz() { // Função encarregada de encerrar o quiz.
     if (points <= 30) { // Bloco condidional
         text1.innerHTML = "Não foi dessa vez :("
         document.querySelector(".scorePct").style.color = "rgba(117, 4, 4, 0.966)"
+        image.src = "images/bronze.png"
     } else if (points <= 50) {
         text1.innerHTML = "Mais ou Menos :/"
         document.querySelector(".scorePct").style.color = "#b37503"
+        image.src = "images/silver.png"
     } else if (points <= 80) {
         text1.innerHTML = "Acima da média! :)"
         document.querySelector(".scorePct").style.color = "yellow"
+        image.src = "images/golden.png"
     } else {
         text1.innerHTML = "Excelente! :D"
         document.querySelector(".scorePct").style.color = "#09B062"
+        image.src = "images/prize.png"
     }
     /*
-        Com o Bloco da Mensagem definido em uma variável na Linha 79, o algoritmo executará uma sequência de verficações
-        no bloco condicional se basendo na porcentagem de acertos do usuário.
+        Com o Bloco da Mensagem e a Imagem Final definidos em variáveis nas Linhas 88 e 89, o algoritmo executará uma
+        sequência de verficações no bloco condicional se basendo na porcentagem de acertos do usuário.
 
         De acordo com o que for verdadeiro, o texto exibido na página dentro do Bloco da Mensagem será definido dinamicamente
-        assim como a cor da porcentagem que também sofrerá uma estilização diferente.
+        assim como a cor da porcentagem e a imagem apresentada que também sofrerão uma estilização diferente.
     */
 }
 

@@ -25,11 +25,50 @@ h1 {
     left: 0;
     top: 0;
     right: 0;
+    display: none;
 }
+
 .progress--bar {
     background-color: #09B062;
     height: 100%;
     transition: all ease .5s;
+}
+
+.startArea {
+    background-color: #575454;
+    height: 250px;
+    width: 300px;
+    margin-top: 25px;
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.startArea h1 {
+    margin: 0 10px 15px 10px;
+}
+
+.startArea p {
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+.startArea button {
+    border: 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #CCC;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.startArea button:hover {
+    background-color: #006633;
 }
 
 .questionArea,
@@ -116,6 +155,7 @@ h1 {
     margin-top: 20px;
     cursor: pointer;
 }
+
 .scoreArea button:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
